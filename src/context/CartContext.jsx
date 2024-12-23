@@ -1,33 +1,47 @@
-import { createContext, useState } from 'react';
+import { createContext, useState } from "react"
 
-const CartContext = createContext();
+export const CartContext = createContext()
 
-const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
+export const CartProvider = ({ children }) => {
+  const [cartItems, setCartItems] = useState([])
 
-  const addItem = (item) => {
-    setCartItems((prevItems) => [...prevItems, item]);
-  };
+  const addToCart = (product) => {
+    const existingItem = cartItems.find((item) => item.id === product.id)
 
-  const removeItem = (id) => {
-    setCartItems((prevItems) => prevItems.filter(item => item.id !== id));
-  };
-
-  const updateItemQuantity = (id, quantity) => {
-    setCartItems((prevItems) =>
-      prevItems.map(item =>
-        item.id === id ? { ...item, quantity } : item
+    if (existingItem) {
+      setCartItems(
+        cartItems.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        )
       )
-    );
-  };
+    } else {
+      setCartItems([...cartItems, { ...product, quantity: 1 }])
+    }
+  }
 
-  const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  const removeFromCart = (productId) => {
+    setCartItems(cartItems.filter((item) => item.id !== productId))
+  }
+
+  const updateQuantity = (productId, newQuantity) => {
+    setCartItems(
+      cartItems.map((item) =>
+        item.id === productId ? { ...item, quantity: newQuantity } : item
+      )
+    )
+  }
 
   return (
-    <CartContext.Provider value={{ cartItems, addItem, removeItem, updateItemQuantity, totalPrice }}>
+    <CartContext.Provider
+      value={{
+        cartItems,
+        addToCart,
+        removeFromCart,
+        updateQuantity,
+      }}>
       {children}
     </CartContext.Provider>
-  );
-};
-
-export { CartContext, CartProvider };
+  )
+}

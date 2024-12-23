@@ -1,19 +1,22 @@
-function CartItem({ item, onRemove, onUpdateQuantity }) {
+import PropTypes from "prop-types"
+
+function CartItem({ item }) {
   return (
-    <div className="cart-item">
-      <img src={item.image} alt={item.title} />
-      <div className="item-details">
-        <h3>{item.title}</h3>
-        <p>Price: ${item.price}</p>
-        <div className="quantity-controls">
-          <button onClick={() => onUpdateQuantity(item.id, item.quantity - 1)}>-</button>
-          <span>{item.quantity}</span>
-          <button onClick={() => onUpdateQuantity(item.id, item.quantity + 1)}>+</button>
-        </div>
-        <button onClick={() => onRemove(item.id)}>Remove</button>
-      </div>
-    </div>
-  );
+    <li className="cart-item">
+      <span>{item.name}</span>
+      <span>Quantity: {item.quantity}</span>
+      <span>${item.price.toFixed(2)}</span>
+    </li>
+  )
 }
 
-export default CartItem;
+CartItem.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    quantity: PropTypes.number.isRequired,
+  }).isRequired,
+}
+
+export default CartItem
