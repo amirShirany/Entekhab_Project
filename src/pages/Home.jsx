@@ -2,8 +2,6 @@ import { useState } from "react"
 import ProductGrid from "../components/Products/ProductGrid"
 import ProductFilters from "../components/Products/ProductFilters"
 import ProductSearch from "../components/Products/ProductSearch"
-import Header from "../components/Layout/Header"
-import Footer from "../components/Layout/Footer"
 import productsData from "../data/products"
 
 const Home = () => {
@@ -30,7 +28,6 @@ const Home = () => {
 
   return (
     <div>
-      <Header />
       <ProductSearch onSearch={handleSearch} />
       <ProductFilters
         categories={categories}
@@ -40,7 +37,6 @@ const Home = () => {
         onPriceRangeChange={() => {}}
       />
       <ProductGrid products={products} />
-      <Footer />
     </div>
   )
 }
