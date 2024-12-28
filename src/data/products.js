@@ -1,39 +1,75 @@
 const products = [
   {
     id: 1,
-    title: "Product 1",
+    title: "محصول 1",
     price: 100,
-    image: "https://example.com/product1.jpg",
+    image: "https://via.placeholder.com/600/3a0b95",
     description: "Description for Product 1",
+    thumbnailUrl: "https://via.placeholder.com/150/92c952",
   },
   {
     id: 2,
-    title: "Product 2",
+    title: "محصول 2",
     price: 200,
-    image: "https://example.com/product2.jpg",
+    image: "https://via.placeholder.com/600/1f1200",
     description: "Description for Product 2",
   },
   {
     id: 3,
-    title: "Product 3",
+    title: "محصول 3",
     price: 300,
-    image: "https://example.com/product3.jpg",
+    image: "https://via.placeholder.com/600/8eb4d7",
     description: "Description for Product 3",
   },
   {
     id: 4,
-    title: "Product 4",
+    title: "محصول 4",
     price: 400,
-    image: "https://example.com/product4.jpg",
+    image: "https://via.placeholder.com/600/197d29",
     description: "Description for Product 4",
   },
   {
     id: 5,
-    title: "Product 5",
+    title: "محصول 5",
     price: 500,
-    image: "https://example.com/product5.jpg",
+    image: "https://via.placeholder.com/600/fdf73e",
     description: "Description for Product 5",
   },
-];
+  {
+    id: 6,
+    title: "محصول 6",
+    price: 600,
+    image: "https://via.placeholder.com/600/e0f1ee",
+    description: "Description for Product 5",
+  },
+  {
+    id: 7,
+    title: "محصول 7",
+    price: 700,
+    image: "https://via.placeholder.com/600/33823f",
+    description: "Description for Product 5",
+  },
+  {
+    id: 8,
+    title: "محصول 8",
+    price: 800,
+    image: "https://via.placeholder.com/600/1d0bd0",
+    description: "Description for Product 5",
+  },
+  {
+    id: 9,
+    title: "محصول 9",
+    price: 900,
+    image: "https://via.placeholder.com/600/f82d77",
+    description: "Description for Product 5",
+  },
+  {
+    id: 10,
+    title: "محصول 10",
+    price: 1000,
+    image: "https://via.placeholder.com/600/79a614",
+    description: "Description for Product 5",
+  },
+]
 
-export default products;
+export default products

@@ -1,7 +1,6 @@
 import { useState } from "react"
 import ProductGrid from "../components/Products/ProductGrid"
 import ProductFilters from "../components/Products/ProductFilters"
-import ProductSearch from "../components/Products/ProductSearch"
 import productsData from "../data/products"
 
 const Home = () => {
@@ -28,8 +27,8 @@ const Home = () => {
 
   return (
     <div>
-      <ProductSearch onSearch={handleSearch} />
       <ProductFilters
+        onSearch={handleSearch}
         categories={categories}
         selectedCategory={selectedCategory}
         onFilterChange={handleFilterChange}

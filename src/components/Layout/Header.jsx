@@ -11,7 +11,7 @@ function Header() {
               <li key={index}>
                 <a
                   href={index === 0 ? "/" : `/${item.toLowerCase()}`}
-                  className="text-2xl font-medium hover:text-blue-200 transition-all duration-300 
+                  className="text-2xl font-semibold hover:text-blue-200 transition-all duration-300 
                     relative after:content-[''] after:absolute after:w-0 after:h-0.5 
                     after:bg-blue-200 after:left-0 after:-bottom-2 hover:after:w-full 
                     after:transition-all after:duration-300">
